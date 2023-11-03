@@ -24,6 +24,11 @@ class Measurement
     #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: '0')]
     private ?string $celsius = null;
 
+    public function getFahrehneit(): ?string
+    {
+        return $this->celsius * 9 / 5 + 32;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
